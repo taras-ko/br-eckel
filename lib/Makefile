@@ -18,13 +18,13 @@ LDFLAGS = -L=./ -Wl,-rpath=./
 .cpp.o:
 	$(CC) $(CFLAGS) -c $< -o $@ -Iinclude
 
-libStash: $(STASHOBJ)
-	$(CC) $(CFLAGS) -o $@.so $(STASHOBJ) -shared
+Stash: $(STASHOBJ)
+	$(CC) $(CFLAGS) -o lib$@.so $(STASHOBJ) -shared
 
-libStack: $(STACKOBJ)
-	$(CC) $(CFLAGS) -o $@.so $(STACKOBJ) -shared
+Stack: $(STACKOBJ)
+	$(CC) $(CFLAGS) -o lib$@.so $(STACKOBJ) -shared
 
-stack-test: libStack
+stack-test: Stack
 	$(CC) -o stacktest src/StackTest.cpp -Iinclude -lStack $(LDFLAGS)
 
 lib: default
@@ -32,7 +32,7 @@ lib: default
 default: $(OBJS)
 	$(CC) $(CFLAGS) -o $(LIBNAME).so $(OBJS) -shared
 
-stash-test: libStash
+stash-test: Stash
 	$(CC) test/$@.cpp -o $@  -lStash $(LDFLAGS) -Iinclude
 	@./$@
 

@@ -1,5 +1,5 @@
 CC = g++
-CLIB = ../common/CLib
+CLIB=../lib
 CFLAGS = -I$(CLIB)/include -g
 LDFLAGS = $(CFLAGS) -L=$(CLIB) -lStack -Wl,-rpath=$(CLIB)
 
