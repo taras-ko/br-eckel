@@ -10,6 +10,10 @@ public:
 	friend void manipulator2(Lib *);
 };
 
+struct Lib2 {
+	string a, b, c;
+};
+
 void manipulator1(Lib *obj)
 {
 	obj->a = "Hello";
