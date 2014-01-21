@@ -12,5 +12,6 @@ public:
 	void* peek();
 	void* pop();
 	void cleanup();
+	void reverse();
 };
 #endif // STACK_H ///:~

@@ -35,3 +35,21 @@ void Stack::cleanup() {
 	require(head == 0, "Stack not empty");
 } ///:~
 
+void Stack::reverse() {
+	Link *prev, *current, *next;
+
+	prev = 0;
+	current = head;
+	next = current->next;
+
+	while (next != 0) {
+		current->next = prev;
+		prev = current;
+		current = next;
+		next = current->next;
+	}
+
+	head = current;
+	head->next = prev;
+}
+

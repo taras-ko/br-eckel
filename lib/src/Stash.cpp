@@ -67,7 +67,7 @@ void Stash::inflate(int increase)
 void Stash::cleanup()
 {
 	if (storage->size() != 0) {
-		cout << "freeing storage" << endl;
+//		cout << "freeing storage" << endl;
 		delete storage;
 	}
 } ///:~
