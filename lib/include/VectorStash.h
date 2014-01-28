@@ -6,11 +6,10 @@ class Stash {
 	int size;		// Size of each space
 	int quantity;	// Number of storage spaces
 	int next;		// Next empty space
-	unsigned char *storage;
 	void inflate(int increase);
+	std::vector<unsigned char> *storage; // Dynamically allocated array of bytes:
 public:
 	Stash(int size);
-	Stash(int size, int initQuantity);
 	~Stash();
 	int add(const void* element);
 	void* fetch(int index);

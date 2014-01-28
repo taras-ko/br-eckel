@@ -3,17 +3,21 @@
 
 using namespace std;
 
-void
-Stack::Link::initialize(void* dat, Link* nxt) {
+Stack::Link::Link(void* dat, Link* nxt) {
 	data = dat;
 	next = nxt;
 }
 
-void Stack::initialize() { head = 0; }
+Stack::Link::~Link() { }
+
+Stack::Stack() { head = 0; }
+
+Stack::~Stack() {
+	require(head == 0, "Stack not empty");
+}
 
 void Stack::push(void* dat) {
-	Link* newLink = new Link;
-	newLink->initialize(dat, head);
+	Link* newLink = new Link(dat, head);
 	head = newLink;
 }
 
@@ -30,10 +34,6 @@ void* Stack::pop() {
 	delete oldHead;
 	return result;
 }
-
-void Stack::cleanup() {
-	require(head == 0, "Stack not empty");
-} ///:~
 
 void Stack::reverse() {
 	Link *prev, *current, *next;

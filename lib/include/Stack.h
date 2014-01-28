@@ -4,14 +4,15 @@ class Stack {
 	struct Link {
 		void* data;
 		Link* next;
-		void initialize(void* dat, Link* nxt);
+		Link(void* dat, Link* nxt);
+		~Link();
 	}* head;
 public:
-	void initialize();
+	Stack();
+	~Stack();
 	void push(void* dat);
 	void* peek();
 	void* pop();
-	void cleanup();
 	void reverse();
 };
 #endif // STACK_H ///:~

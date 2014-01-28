@@ -5,43 +5,35 @@
 #include <fstream>
 #include <iostream>
 #include <string>
-#include <cassert>
 
 #include <Stash.h>
+#include <require.h>
 
 using namespace std;
 int main()
 {
 	// Define variables at the beginning
 	// of the block, as in C:
-	Stash intStash, stringStash;
-	int i;
-	char *cp;
-	ifstream in;
-	string line;
-	const int bufsize = 80;
-
-	// Now remember to initialize the variables:
-	intStash.initialize(sizeof(int));
-
-	for (i = 0; i < 100; i++)
+	Stash intStash(sizeof(int));
+	for (int i = 0; i < 100; i++)
 		intStash.add(&i);
 
-	for (i = 0; i < intStash.count(); i++)
+	for (int i = 0; i < intStash.count(); i++)
 		cout << *(int*)intStash.fetch(i) << endl;
 
+	const int bufsize = 80;
 	// Holds 80-character strings:
-	stringStash.initialize(sizeof(char) * bufsize);
-	in.open("Makefile");
-	assert(in);
+	Stash stringStash(sizeof(char) * bufsize, 100);
+	ifstream in("Makefile");
+	assure(in, " Makefile");
 
+	string line;
 	while (getline(in, line))
 		stringStash.add(line.c_str());
 
-	i = 0;
-	while((cp = (char*) stringStash.fetch(i++)) != 0)
+	int k = 0;
+	char *cp;
+	while((cp = (char*) stringStash.fetch(k++)) != 0)
 		cout << cp << endl;
 
-	intStash.cleanup();
-	stringStash.cleanup();
 } ///:~
