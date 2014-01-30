@@ -40,7 +40,7 @@ inline void requireMinArgs(int argc, int minArgs,
     exit(1);
   }
 }
-  
+
 inline void assure(std::ifstream& in, 
   const char* filename = "") {
   using namespace std;

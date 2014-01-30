@@ -1,5 +1,6 @@
 #include <Stack.h>
 #include <require.h>
+#include <iostream>
 
 using namespace std;
 
@@ -11,6 +12,13 @@ Stack::Link::Link(void* dat, Link* nxt) {
 Stack::Link::~Link() { }
 
 Stack::Stack() { head = 0; }
+
+Stack::Stack(void **ptrs, int size)
+{
+	head = 0;
+	for (int i = 0; i < size / sizeof(*ptrs); i++)
+		push(ptrs[i]);
+}
 
 Stack::~Stack() {
 	require(head == 0, "Stack not empty");
@@ -27,8 +35,10 @@ void* Stack::peek() {
 }
 
 void* Stack::pop() {
-	if(head == 0) return 0;
-		void* result = head->data;
+	if (head == 0)
+		return 0;
+
+	void* result = head->data;
 	Link* oldHead = head;
 	head = head->next;
 	delete oldHead;

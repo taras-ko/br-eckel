@@ -10,14 +10,6 @@ using namespace std;
 // when increasing storage:
 const int increment = 100;
 
-Stash::Stash(int sz)
-{
-	size = sz;
-	quantity = 0;
-	next = 0;
-	storage = 0;
-}
-
 Stash::Stash(int sz, int initQuantity)
 {
 	size = sz;

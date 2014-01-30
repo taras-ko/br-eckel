@@ -9,6 +9,7 @@ class Stack {
 	}* head;
 public:
 	Stack();
+	Stack(void **, int size);
 	~Stack();
 	void push(void* dat);
 	void* peek();

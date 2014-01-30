@@ -9,8 +9,7 @@ class Stash {
 	unsigned char *storage;
 	void inflate(int increase);
 public:
-	Stash(int size);
-	Stash(int size, int initQuantity);
+	Stash(int size, int initQuantity = 0);
 	~Stash();
 	int add(const void* element);
 	void* fetch(int index);
