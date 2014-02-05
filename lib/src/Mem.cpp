@@ -6,7 +6,7 @@ using namespace std;
 Mem::Mem(int sz)
 {
 	mem = 0;
-	size = sz;
+	size = 0;
 	ensureMinSize(sz);
 }
 
@@ -17,7 +17,7 @@ int Mem::msize() { return size; }
 void Mem::ensureMinSize(int minSize)
 {
 	if (size < minSize) {
-		byte* newmem = new byte[minSize];
+		byte *newmem = new byte[minSize];
 		memset(newmem + size, 0, minSize - size);
 		memcpy(newmem, mem, size);
 		delete []mem;
@@ -26,9 +26,9 @@ void Mem::ensureMinSize(int minSize)
 	}
 }
 
-byte* Mem::pointer() { return mem; }
+byte *Mem::pointer() { return mem; }
 
-byte* Mem::pointer(int minSize)
+byte *Mem::pointer(int minSize)
 {
 	ensureMinSize(minSize);
 	return mem;
