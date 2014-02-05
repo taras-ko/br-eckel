@@ -43,6 +43,11 @@ MyString::~MyString() { delete buf; }
 
 int main()
 {
+	Mem mem;
+	cout << mem.moved() << endl;
+	mem.pointer(1);
+	cout << mem.moved() << endl;
+
 	MyString s("My test string");
 	s.print(cout);
 	s.concat(" some additional stuff");

@@ -3,6 +3,7 @@
 #define MEM_H
 typedef unsigned char byte;
 class Mem {
+	byte *oldmem;
 	byte *mem;
 	int size;
 	void ensureMinSize(int minSize);
@@ -12,5 +13,6 @@ public:
 	int msize();
 	byte *pointer();
 	byte *pointer(int minSize);
+	bool moved();
 };
 #endif // MEM_H ///:~
