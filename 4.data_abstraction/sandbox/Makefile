@@ -1,2 +1,0 @@
-CC = g++
-CPPFLAGS = -g
