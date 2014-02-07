@@ -29,10 +29,6 @@ int main(int argc, char* argv[])
 #endif
 	string *s;
 
-	while((s = (string *) textlines.pop()) != 0 ) {
+	while((s = (string *) textlines.pop()) != 0 )
 		cout << *s << endl;
-//		delete s;
-	}
-
-	delete &one;
 }

@@ -12,13 +12,6 @@ using namespace std;
 // when increasing storage:
 const int increment = 100;
 
-Stash::Stash(int sz, int initQuantity)
-	: size(sz), quantity(initQuantity)
-{
-	next = 0;
-	storage = new Mem(size * initQuantity);
-}
-
 int Stash::add(const void *element)
 {
 	if (next >= quantity)
@@ -30,19 +23,6 @@ int Stash::add(const void *element)
 
 	next++;
 	return (next - 1);
-}
-
-void *Stash::fetch(int index)
-{
-	require(0 <= index, "Stash::fetch (-)index");
-	if (index >= next)
-		return 0;
-	return storage->pointer() + index * size;
-}
-
-int Stash::count()
-{
-	return next; // Elements in Stash
 }
 
 void Stash::inflate(int increase)
@@ -57,12 +37,3 @@ void Stash::inflate(int increase)
 
 	quantity = newQuantity;
 }
-
-Stash::~Stash()
-{
-	if (size != 0) {
-		cout << "freeing storage" << endl;
-		delete storage;
-	}
-} ///:~
-

@@ -41,7 +41,7 @@ test: mem-test stash-test stack-test
 mem-test: Mem
 	$(CC) -g test/$@.cpp -o $@  -lMem $(LDFLAGS) -Iinclude
 
-stash-test: Stash
+stash-test: Mem Stash
 	$(CC) test/$@.cpp -o $@  -lStash -lMem $(LDFLAGS) -Iinclude
 
 stack-test: Stack
