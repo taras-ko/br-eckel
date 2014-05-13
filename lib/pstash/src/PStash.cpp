@@ -32,16 +32,19 @@ void *PStash::operator[](int index) const
 
 	return storage[index];
 }
+void *PStash::remove(int index) {
+	void *v = operator[](index);
+	if (v != 0) storage[index] = 0;
+	return v;
+}
 
-void Stash::inflate(int increase)
+void PStash::inflate(int increase)
 {
-	assert(increase > 0);
-
-	if (increase == 0)
-		return;
-
-	int newQuantity = quantity + increase;
-	storage->pointer(size * newQuantity);
-
-	quantity = newQuantity;
+	const int psz = sizeof(void *);
+	void **st = new void *[quantity + increase];
+	memset(st, 0, (quantity + increase) * psz);
+	memcpy(st, storage, quantity * psz);
+	quantity += increase;
+	delete []storage;
+	storage = st;
 }

@@ -1,4 +1,3 @@
-CC = g++
 CSTASHLIB := libClib
 STASHLIB := libStash
 TESTPROG := clibtest
@@ -15,20 +14,17 @@ STACKOBJ = $(STACKSRC:.cpp=.o)
 SOURCES = $(wildcard src/*.cpp)
 OBJS := $(SOURCES:.cpp=.o)
 
-CFLAGS := -g -fPIC
+CXXFLAGS := -g -fPIC
 LDFLAGS = -L=./ -Wl,-rpath=./
 
-.cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $@ -Iinclude
-
 Mem: $(MEMOBJ)
-	$(CC) $(CFLAGS) -o lib$@.so $(MEMOBJ) -shared
+	$(CXX) -o lib$@.so $(MEMOBJ) -shared
 
 Stash: $(STASHOBJ)
-	$(CC) $(CFLAGS) -o lib$@.so $(STASHOBJ) -shared
+	$(CXX) -o lib$@.so $(STASHOBJ) -shared
 
 Stack: $(STACKOBJ)
-	$(CC) $(CFLAGS) -o lib$@.so $(STACKOBJ) -shared
+	$(CXX) -o lib$@.so $(STACKOBJ) -shared
 
 
 lib: default
@@ -46,6 +42,3 @@ stash-test: Mem Stash
 
 stack-test: Stack
 	$(CC) test/$@.cpp -o $@  -lStack $(LDFLAGS) -Iinclude
-
-clean:
-	find \( -type f -executable -o -name "*.o" -o -name "core" \) -exec rm -v {} \;

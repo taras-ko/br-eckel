@@ -7,12 +7,12 @@ class PStash {
 	void inflate(int increase);
 public:
 	PStash() : quantity(0), storage(0), next(0) {}
-	~Stash();
+	~PStash();
 
 	int add(void* element);
 	void *operator[](int index) const;
 	void *remove(int index);
-	int count() const { return next; }
+	int size() const { return next; }
 };
 #endif // PSTASH_H
 

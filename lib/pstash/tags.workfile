@@ -1,0 +1,60 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+PSTASH_H	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	2;"	d
+PStash	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	PStash() : quantity(0), storage(0), next(0) {}$/;"	f	class:PStash	access:public	signature:()
+PStash	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^class PStash {$/;"	c
+PStash::PStash	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	PStash() : quantity(0), storage(0), next(0) {}$/;"	f	class:PStash	access:public	signature:()
+PStash::add	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int add(void* element);$/;"	p	class:PStash	access:public	signature:(void* element)
+PStash::add	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^int PStash::add(void *element)$/;"	f	class:PStash	signature:(void *element)
+PStash::inflate	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void inflate(int increase);$/;"	p	class:PStash	access:private	signature:(int increase)
+PStash::inflate	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^void PStash::inflate(int increase)$/;"	f	class:PStash	signature:(int increase)
+PStash::next	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int next;		\/\/ Next empty block$/;"	m	class:PStash	access:private
+PStash::operator []	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void *operator[](int index) const;$/;"	p	class:PStash	access:public	signature:(int index) const
+PStash::operator []	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^void *PStash::operator[](int index) const$/;"	f	class:PStash	signature:(int index) const
+PStash::quantity	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int quantity;	\/\/ Number of storage blocks$/;"	m	class:PStash	access:private
+PStash::remove	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void *remove(int index);$/;"	p	class:PStash	access:public	signature:(int index)
+PStash::remove	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^void *PStash::remove(int index) {$/;"	f	class:PStash	signature:(int index)
+PStash::size	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int size() const { return next; }$/;"	f	class:PStash	access:public	signature:() const
+PStash::storage	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void **storage;$/;"	m	class:PStash	access:private
+PStash::~PStash	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	~PStash();$/;"	p	class:PStash	access:public	signature:()
+PStash::~PStash	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^PStash::~PStash() {$/;"	f	class:PStash	signature:()
+add	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int add(void* element);$/;"	p	class:PStash	access:public	signature:(void* element)
+add	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^int PStash::add(void *element)$/;"	f	class:PStash	signature:(void *element)
+add	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		intStash.add(new int(i));$/;"	p	file:	signature:(new int(i))
+add	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		stringStash.add(line.c_str());$/;"	p	file:	signature:(line.c_str())
+add	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		stringStash.add(new string(line));$/;"	p	file:	signature:(new string(line))
+bufsize	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	const int bufsize = 80;$/;"	l
+cp	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	char *cp;$/;"	l
+endl	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^			<< *(string *)stringStash[u] << endl;$/;"	l
+endl	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		cout << *(int*)intStash[i] << endl;$/;"	l
+endl	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		cout << cp << endl;$/;"	l
+inflate	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void inflate(int increase);$/;"	p	class:PStash	access:private	signature:(int increase)
+inflate	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^void PStash::inflate(int increase)$/;"	f	class:PStash	signature:(int increase)
+inflateSize	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^	const int inflateSize = 10;$/;"	l
+intStash	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	PStash intStash();$/;"	p	file:	signature:()
+intStash	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	PStash intStash;$/;"	l
+k	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	int k = 0;$/;"	l
+line	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	string line;$/;"	l
+main	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^int main()$/;"	f	signature:()
+next	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int next;		\/\/ Next empty block$/;"	m	class:PStash	access:private
+operator []	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void *operator[](int index) const;$/;"	p	class:PStash	access:public	signature:(int index) const
+operator []	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^void *PStash::operator[](int index) const$/;"	f	class:PStash	signature:(int index) const
+psz	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^	const int psz = sizeof(void *);$/;"	l
+quantity	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int quantity;	\/\/ Number of storage blocks$/;"	m	class:PStash	access:private
+remove	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void *remove(int index);$/;"	p	class:PStash	access:public	signature:(int index)
+remove	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^void *PStash::remove(int index) {$/;"	f	class:PStash	signature:(int index)
+remove	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		delete (int *)intStash.remove(k);$/;"	p	file:	signature:(k)
+remove	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		delete (string*)stringStaash.remove(v);$/;"	p	file:	signature:(v)
+remove	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		delete (string*)stringStash.remove(v);$/;"	p	file:	signature:(v)
+remove	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^		delete intStash.remove(k);$/;"	p	file:	signature:(k)
+size	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	int size() const { return next; }$/;"	f	class:PStash	access:public	signature:() const
+st	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^	void **st = new void *[quantity + increase];$/;"	l
+storage	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	void **storage;$/;"	m	class:PStash	access:private
+stringStash	/home/x0170753/src/github/br-eckel/lib/pstash/test/stash-test.cpp	/^	PStash stringStash;$/;"	l
+v	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^	void *v = operator[](index);$/;"	l
+~PStash	/home/x0170753/src/github/br-eckel/lib/pstash/include/PStash.h	/^	~PStash();$/;"	p	class:PStash	access:public	signature:()
+~PStash	/home/x0170753/src/github/br-eckel/lib/pstash/src/PStash.cpp	/^PStash::~PStash() {$/;"	f	class:PStash	signature:()
