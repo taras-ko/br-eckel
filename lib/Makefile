@@ -8,7 +8,7 @@ MEMOBJ = $(MEMSRC:.cpp=.o)
 STASHSRC = src/Stash.cpp
 STASHOBJ = $(STASHSRC:.cpp=.o)
 
-STACKSRC = src/Stack.cpp
+STACKSRC = stack/src/Stack.cpp
 STACKOBJ = $(STACKSRC:.cpp=.o)
 
 SOURCES = $(wildcard src/*.cpp)

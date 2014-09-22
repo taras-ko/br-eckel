@@ -1,17 +1,19 @@
-sources := $(wildcard src/*.cpp)
-objects := $(sources:.cpp=.o)
+SRCS := $(wildcard src/*.cpp)
+OBJS := $(SRCS:.cpp=.o)
 
-
-CXXFLAGS = -Iinclude
+CXXFLAGS := \
+	-Iinclude \
+	-I../include \
+	-fPIC
 
 .cpp.o:
-	$(CXX) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-.o.so:
-	$(CXX) $< -o $@ -shared
+default: $(OBJS)
+	$(CXX) $(OBJS) -o lib$(LOCAL_MODULE).so -shared
 
 clean:
-	find \( \
+	@find \( \
 		-type f \
 		-executable -o \
 		-name "*.so" -o \
