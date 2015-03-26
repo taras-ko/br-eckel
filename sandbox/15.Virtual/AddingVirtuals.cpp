@@ -12,32 +12,31 @@ class Pet {
   string pname;
 public:
   Pet(const string& petName) : pname(petName) {}
-  virtual string name() const = 0; //{ return pname; }
+  virtual string get_name() const = 0; //{ return pname; }
   virtual string speak() const = 0;//{ return ""; }
 };
 
-//string Pet::name() const { return pname; };
-string Pet::speak() const { return ""; };
+string Pet::get_name() const { return pname; }
+string Pet::speak() const { return ""; }
 
 class Dog : public Pet {
   string name;
 public:
-  Dog(const string& petName) : Pet(petName) {}
+  Dog(const string& _name) : Pet("Dog"), name(_name) {}
   // New virtual function in the Dog class:
   virtual string sit() const {
-    return Pet::name() + " sits";
+    return get_name() + " sits";
   }
-  string speak() const { // Override
-    return Pet::name() + " says 'Bark!'";
+  virtual string speak() const { // Override
+    return get_name() + " says 'Bark!'";
   }
-  string name() const { return Pet::name() + " " + name; }
+  virtual string get_name() const { return Pet::get_name() + " " + name; }
 };
 
 int main() {
-	Dog d("bob");
-//  Pet* p[] = {new Dog("bob")};
- // cout << "p[0]->speak() = "
-  //     << p[0]->speak() << endl;
-//! cout << "p[1]->sit() = "
-//!      << p[1]->sit() << endl; // Illegal
+  Pet* p[] = { new Dog("Simba") };
+  cout << "p[0]->speak() = "
+       << p[0]->speak() << endl;
+//  cout << "p[0]->sit() = "
+ //      << p[0]->sit() << endl; // Illegal
 } ///:~

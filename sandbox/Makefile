@@ -1,6 +1,7 @@
-LIBPATH = ../lib
+LIB = ../lib
 
 CXXFLAGS += \
+		 -I$(LIB)/include \
 		 -std=c++0x \
 		 -O0 \
 		 -g
