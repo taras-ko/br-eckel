@@ -3,7 +3,7 @@
 // Available at http://www.BruceEckel.com
 // (c) Bruce Eckel 2000
 // Copyright notice in Copyright.txt
-//{L} AutoCounter 
+//{L} AutoCounter
 #include "AutoCounter.h"
 #include "OwnerStack.h"
 #include "require.h"

@@ -6,11 +6,9 @@ using namespace std;
 
 class X {
   static MyAutoCounter<X*> ac;
-  string name;
+  static string name;
 public:
   X() {
-    //name = "X(" + std::to_string(ac.get_count()) + ")";
-    //cout << name << endl;
     ac.add(this);
   }
   ~X() {
@@ -18,7 +16,9 @@ public:
   }
 };
 
-MyAutoCounter<X*> X::ac;
+string X::name {"X"};
+
+MyAutoCounter<X*> X::ac {name};
 
 int main()
 {

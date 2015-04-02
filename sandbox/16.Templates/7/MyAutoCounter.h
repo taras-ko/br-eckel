@@ -8,27 +8,28 @@
 template <typename T>
 class MyAutoCounter {
   static int count;
+  std::string name;
   std::set<T> trace;
   // Prevent assignment and copy-construction:
   MyAutoCounter(const MyAutoCounter&);
   void operator=(const MyAutoCounter&);
 public:
-  MyAutoCounter() {}
+  MyAutoCounter(std::string& _name = "") : name(_name) {}
   ~MyAutoCounter() {
       std::cout << "~CleanupCheck()"<< std::endl;
       require(trace.size() == 0,
        "Not all objects are cleaned up");
     }
   void add(T obj) {
+    std::cout << "creating " << ++count << " "
+      << name << std::endl;
     trace.insert(obj);
-    std::cout << "created[" << ++count << "]"
-              << std::endl;
   }
   void remove (T obj) {
      require(trace.erase(obj) == 1,
         "Attempt to delete Obj twice");
-     std::cout << "destroying[" << count--
-              << "]" << std::endl;
+     std::cout << "destroying " << count--
+              << " " << name << std::endl;
   }
   int get_count() { return count; }
 

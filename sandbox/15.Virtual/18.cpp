@@ -1,40 +1,47 @@
 #include <iostream>
 
+/* Create a class that has a data member and a derived class that adds another data member.
+ * Write a non-member function that takes an object of the base class by value and prints
+ * out the size of that object using sizeof( ). In main( ) create an object of the derived class,
+ * print out its size, and then call your function. Explain what happens. */
+
 using namespace std;
 
 class Base {
-	int i;
+  int i;
 public:
-	Base(Base& b) {
-		cout << "Base::Base(Base& b)\n";
-	}
-	Base& operator=(const Base& rv) {
-		cout << "Base::operator=(const Base& rv)\n";
-		i = rv.i;
-		return *this;
-	}
-	Base() { cout << "Base::Base()\n"; }
-	~Base() { cout << "Base::~Base()\n"; }
+  Base(Base& b) {
+    cout << "Base::Base(Base& b)\n";
+  }
+  Base& operator=(const Base& rv) {
+    cout << "Base::operator=(const Base& rv)\n";
+    i = rv.i;
+    return *this;
+  }
+  Base() { cout << "Base::Base()\n"; }
+  ~Base() { cout << "Base::~Base()\n"; }
 };
 
 class Derived : public Base {
-	int j;
+  float f;
 public:
-	Derived() { cout << "Derived::Derived()\n"; }
-	~Derived() { cout << "Derived::~Derived()\n"; }
+  Derived() { cout << "Derived::Derived()\n"; }
+  ~Derived() { cout << "Derived::~Derived()\n"; }
 };
 
-Base foo(Base b)
+void mySize(Base b)
 {
-	cout << sizeof(b) << endl;
-	return b;
+  cout << "mySize == " << sizeof(b) << endl;
 }
 
 int main()
 {
-	Derived d1;
+  Base b;
+  Derived d;
 
-	cout << sizeof(d1) << endl;
+  cout << "sizeof b == " << sizeof(b) << endl;
+  cout << "sizeof d == " << sizeof(d) << endl;
 
-	Base b1(foo(d1));
+  mySize(b);
+  mySize(d);
 }
