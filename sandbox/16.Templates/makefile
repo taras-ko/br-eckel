@@ -5,3 +5,6 @@ include ../../Makefile
 
 ValueStackTest:
 	$(CXX) $(CXXFLAGS) $@.cpp SelfCounter.cpp
+
+9:
+	$(CXX) $(CXXFLAGS) $@.cpp SelfCounter.cpp

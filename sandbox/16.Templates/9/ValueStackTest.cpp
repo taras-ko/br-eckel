@@ -17,6 +17,10 @@ int main() {
 #else
   Stack<SelfCounter, 1> sc; // (1) SelfCounter created: 0
   sc.push(SelfCounter()); // (2) SelfCounter created: 1
+  sc.push(SelfCounter()); // (2) SelfCounter created: 1
+  sc.push(SelfCounter()); // (2) SelfCounter created: 1
+  sc.push(SelfCounter()); // (2) SelfCounter created: 1
+  sc.push(SelfCounter()); // (2) SelfCounter created: 1
 #endif
 #if 0
   // OK to peek(), result is a temporary:
