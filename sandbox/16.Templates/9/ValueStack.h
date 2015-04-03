@@ -19,7 +19,7 @@ public:
   // Copy-constructor copies object into array:
   void push(const T& x) {
     require(top < ssize, "Too many push()es");
-    stack[top++] = x;
+    stack[top++] = x; // (3) SelfCounter assigned 1 to 0; (5) SelfCounter destroyed: 0
   }
   T peek() const { return stack[top]; }
   // Object still exists when you pop it; 

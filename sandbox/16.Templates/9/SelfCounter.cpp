@@ -5,3 +5,4 @@
 // Copyright notice in Copyright.txt
 #include "SelfCounter.h"
 int SelfCounter::counter = 0; ///:~
+std::string SelfCounter::class_name = "SelfCounter";
